@@ -18,8 +18,6 @@ public static class ApiEndpoints
 
             context.Response.Headers.Append("Creation-Date", creationDate.ToString("O"));
             context.Response.Headers.Append("Content-Disposition", $"attachment; filename=\"backup-{creationDate:yyyy-MM-dd_HH-mm-ss}.sql.enc\"");
-            //TODO: Read API Version from configuration or appropriate source
-            context.Response.Headers.Append("Api-Version", "1.0");
 
             IPostgresConfiguration postgresConfiguration = request.AuthenticationType switch {
                 PostgresRequest.AuthType.EnvironmentVariables => new PostgresEnvironmentConfiguration(),

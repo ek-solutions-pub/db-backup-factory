@@ -25,6 +25,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseApiKeyMiddleware("X-Api-Key", apiKey);
+app.AddVersionHeader();
 
 app.MapApiEndpoints();
 

@@ -35,5 +35,9 @@ public static class ApiEndpoints
 
             return Results.File(encryptedStream, "application/octet-stream");
         });
+        endpoints.MapGet("/api/status", async (HttpContext context) =>
+        {
+            return Results.Ok();
+        });
     }
 }

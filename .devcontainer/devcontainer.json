@@ -3,21 +3,13 @@
 {
 	"name": "C# (.NET)",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
 		"ghcr.io/devcontainers/features/dotnet:2": {
 			"version": "8.0"
 		}
-	},
-	"forwardPorts": [],
-	"portsAttributes": {
-		// "5678": {
-		// 	"protocol": "http"
-		// },
-		// "5679": {
-		// 	"protocol": "https"
-		// }
 	},
 	"postCreateCommand": "cd ./.devcontainer && ./postrun.sh",
 	"customizations": {
@@ -33,7 +25,9 @@
 				"ms-dotnettools.csdevkit",
 				"ms-dotnettools.vscodeintellicode-csharp",
 				"fullstackspider.visual-nuget",
-				"formulahendry.dotnet-test-explorer"
+				"formulahendry.dotnet-test-explorer",
+				"humao.rest-client",
+				"cweijan.vscode-database-client2"
 			]
 		}
 	}

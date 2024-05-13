@@ -1,6 +1,14 @@
 @dbf_api_HostAddress = http://localhost:5179
+@api_key = sampleApiKey
 
-GET {{dbf_api_HostAddress}}/weatherforecast/
+POST {{dbf_api_HostAddress}}/api/pg_dump
 Accept: application/json
+X-Api-Key: {{api_key}}
+Content-Type: application/json
+
+{
+    "auth_type": 0,
+    "auth": null
+}
 
 ###

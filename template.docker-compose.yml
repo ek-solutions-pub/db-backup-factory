@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db-backup-factory:
+    image: ghcr.io/ek-solutions-pub/db-backup-factory:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - ENCRYPTION_KEY=secretpassword
+      - ENCRYPTION_IV=12345678
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=db
+      - API_KEY=sampleApiKey
